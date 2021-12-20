@@ -65,7 +65,7 @@ function renderBlog() {
                                         >
                                     </h1>
                                     <div class="detail-blog-content">
-                                        ${getFullTime(blogs[i].postAt)}|${blogs[i].author}
+                                        ${getFullTime(blogs [i] .postAt)} | ${blogs[i].author}
                                     </div>
                                     <p>${blogs[i].content}</p>
                                     <div style="text-align: right;
@@ -91,22 +91,22 @@ let mounth=[
     'november',
     'desember'
 ]
-function getFullTime(time) {
+function getFullTime(waktu) {
     
     
-    let date=time.getDate()
+    let date=waktu.getDate()
    
-    let mounthIndex=time.getMonth()
-    let years=time.getFullYear()
+    let mounthIndex=waktu.getMonth()
+    let years=waktu.getFullYear()
 
-    let hours= time.getHours()
-    let minutes=time.getMinutes()
+    let hours= waktu.getHours()
+    let minutes=waktu.getMinutes()
 
     let fulltime=`${date} ${mounth[mounthIndex]} ${years}${hours}:${minutes} wib`
     return fulltime
 }
-   function getDistanceTime(time) {
-       let timePost=time
+   function getDistanceTime(waktu) {
+       let timePost=waktu
        
        let timeNow=new Date()
        
@@ -140,7 +140,7 @@ function getFullTime(time) {
                 return`${distanceMinutes} minutes ago`
             }else{
                 let hasil= Math.ceil(distance/miliSecond)
-                return hasil
+                return `${hasil} second `
             }
             
         }
